@@ -1,11 +1,7 @@
+import { Amount } from '@/types/amount';
 import { Label } from '@react-navigation/elements';
 import { useState } from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
-
-interface Amount {
-  id: number,
-  value: number,
-}
 
 export default function TabTwoScreen() {
   const [amount, setAmount] = useState<Amount[]>([]);
@@ -13,6 +9,7 @@ export default function TabTwoScreen() {
   const [idAmount, setIdAmount] = useState<number | null>(null);
   const [updatedValue, setUpdateValue] = useState<number>(0);
 
+  // TODO: Moverlos a services
   const addAmount = (newValue: number | null) => {
     if (newValue === 0 || !newValue) return;
 
